@@ -3,8 +3,7 @@
 from flask import Flask, render_template, request
 import numpy as np
 import re
-import math
-import glob, os
+import glob
 import heapq
 import sys
 
@@ -92,7 +91,7 @@ def compute_idf(text, DF, data, present):
     i = 0
     for word in text:
         if(word in DF.keys()):
-            value = math.log10(N / float(sum(present[i])))
+            value = np.log10(N / float(sum(present[i])))
             idf.append(value)
         else:
             print(word)
