@@ -234,6 +234,3 @@ def text_result():
     # Call the controller function
     results, cosines, tables, names, stars, words = controller(text)
     return render_template('result.html', words=words, r_c_t_n_s=zip(results, cosines, tables, names, stars))
-
-if __name__ == '__main__':
-    app.run(debug=True)
