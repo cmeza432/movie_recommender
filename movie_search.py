@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 from flask import Flask, render_template, request
-import text_search as ts
 import numpy as np
 import re
 import math
@@ -234,3 +233,6 @@ def text_result():
     # Call the controller function
     results, cosines, tables, names, stars, words = controller(text)
     return render_template('result.html', words=words, r_c_t_n_s=zip(results, cosines, tables, names, stars))
+
+if __name__ == '__main__':
+        app.run()
