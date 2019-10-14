@@ -1,4 +1,4 @@
-# [**Movie Recommender**]
+# **Movie Recommender**
 
 This movie recommender app uses practices from the **Data Mining** Field to use different methods for information retrieval.
 The webapp will use a Text Search, Classifier and Image Captioning to return results based on user input. It will run using
@@ -33,4 +33,4 @@ Next was getting the cosine similarity which used the TFIDF of both the user inp
 documents which will be q, and the TFIDF of user text on itself as d. TFIDF is has N vectors, and user_TFIDF has one vector.
 So by doing the calculation of user_TFIDF on each TFIDF vector for the amount of N documents is calculated:
 
-* **cos(θ) = [!(https://wikimedia.org/api/rest_v1/media/math/render/svg/1d94e5903f7936d3c131e040ef2c51b473dd071d)**
+* **cos(θ) = [![Cosine](https://wikimedia.org/api/rest_v1/media/math/render/svg/1d94e5903f7936d3c131e040ef2c51b473dd071d)**
