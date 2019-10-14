@@ -33,4 +33,4 @@ Next was getting the cosine similarity which used the TFIDF of both the user inp
 documents which will be q, and the TFIDF of user text on itself as d. TFIDF is has N vectors, and user_TFIDF has one vector.
 So by doing the calculation of user_TFIDF on each TFIDF vector for the amount of N documents is calculated:
 
-* **cos(θ) = [![Cosine](https://wikimedia.org/api/rest_v1/media/math/render/svg/1d94e5903f7936d3c131e040ef2c51b473dd071d)**
+[![Cosine](https://wikimedia.org/api/rest_v1/media/math/render/svg/1d94e5903f7936d3c131e040ef2c51b473dd071d)**
