@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Home Layout</title> 
+    <style> 
+        .head1 { 
+            font-size:50px; 
+            color:#000080; 
+            background: #a9a9a9;
+            font-weight:bold; 
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        } 
+        body { 
+            margin: 0 auto; 
+            background: #a9a9a9;
+            background-position:center; 
+            background-size: contain; 
+        } 
+        .menu {    
+            position: sticky; 
+            top: 0; 
+            background-color: #000080; 
+            padding:20px 0px 20px 0px; 
+            color:white; 
+            margin: 0 auto; 
+            overflow: hidden; 
+        } 
+        footer { 
+            width: 100%; 
+            bottom: 0px; 
+            background-color: #000080; 
+            position: absolute; 
+            padding-top:50px; 
+            padding-bottom:50px; 
+            text-align:center; 
+            font-size:30px; 
+            font-weight:bold; 
+        } 
+        .body_sec { 
+            text-align: center;
+            color:#000080;
+            font-size: 25px;
+        }
+        .text_button {
+            padding: 16px 24px;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right:auto;
+            margin-top: 50px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+        }
+        .text_button:hover {
+            background-color: #000080;
+            color: white;
+        }
+        .classifier_button {
+            padding: 16px 24px;
+            text-align: center;
+            margin-left: auto;
+            margin-right:auto;
+            margin-top: 100px;
+            display: block;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+        }
+        .classifier_button:hover {
+            background-color: #000080;
+            color: white;
+        }
+        .image_button {
+            padding: 16px 24px;
+            text-align: center;
+            margin-left: auto;
+            margin-right:auto;
+            margin-top: 100px;
+            display: block;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+        }
+        .image_button:hover {
+            background-color: #000080;
+            color: white;
+        }
+    </style> 
+</head> 
+  
+<body> 
+      
+    <!-- Header Section -->
+    <header> 
+        <div class="head1">Movie Recommender App</div> 
+    </header> 
+      
+    <!-- Menu Navigation Bar -->
+    <div class="menu"> </div> 
+      
+    <!-- Body section -->
+    <div class = "body_sec"> 
+        <section id="Content"> 
+            <h3>Welcome to the Movie Recommender App!</h3> 
+            <h4>Find movies by either Text Search, using a Classifier, or Image Captioning</h4>
+        </section> 
+    </div> 
+      
+    <!-- Button section -->
+    <form action="text_search" method="post">
+    <button id="textButton" class="text_button" type="submit" onclick="textSearch()">Text Search</button>
+    </form>
+
+    <button class="classifier_button" type="button">Classifier Search</button>
+
+    <button class="image_button" type="button">Image Captioning</button>
+
+    <!-- <script type="text/javascript">
+        document.getElementById("textButton").onclick=function(){
+            location.href = "/app/templates/text.html";
+        };
+    </script> -->
+
+    <!-- Footer Section -->
+    <footer></footer> 
+
+</body> 
+</html>    

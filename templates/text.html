@@ -1,0 +1,125 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Text Search Layout</title> 
+    <style> 
+        .head1 { 
+            font-size:50px; 
+            color:#000080; 
+            background: #a9a9a9;
+            font-weight:bold; 
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        } 
+        body { 
+            margin: 0 auto; 
+            background: #a9a9a9;
+            background-position:center; 
+            background-size: contain; 
+        } 
+        .menu {    
+            position: sticky; 
+            top: 0; 
+            background-color: #000080; 
+            padding:20px 0px 20px 0px; 
+            color:white; 
+            margin: 0 auto; 
+            overflow: hidden; 
+        } 
+        footer { 
+            width: 100%; 
+            bottom: 0px; 
+            background-color: #000080; 
+            position: absolute; 
+            padding-top:50px; 
+            padding-bottom:50px; 
+            text-align:center; 
+            font-size:30px; 
+            font-weight:bold; 
+        } 
+        .body_sec { 
+            text-align: center;
+            color:#000080;
+            font-size: 50px;
+        }
+        .lower_body { 
+            text-align: center;
+            color:#000080;
+            font-size: 25px;
+        }
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 42px 0 86px 24px;
+        }
+        input[type=text], textarea{
+            width: 50%;
+            padding: 6px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 18px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        input[type=submit] {
+            background-color: #000080;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 12px;
+            font-size: 18px;
+            color: white;
+            padding: 12px 24px 12px 24px;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+        }
+    </style> 
+</head> 
+  
+<body> 
+      
+    <!-- Header Section -->
+    <header> 
+        <div class="head1">Movie Recommender App</div> 
+    </header> 
+      
+    <!-- Menu Navigation Bar -->
+    <div class="menu"> </div> 
+      
+    <!-- Body section -->
+    <div class = "body_sec"> 
+        <section id="Content"> 
+            <h3>Text Search</h3> 
+        </section> 
+    </div> 
+
+    <div class = "lower_body"> 
+        <section id="Content"> 
+            <h4>Type the kind of movie wanted to be searched</h4>
+            <h5>Will return the reviews of movies matched</h5> 
+        </section> 
+    </div> 
+
+    <!-- Container for text box -->
+    <div class="container">
+        <!-- <form action="result.html"> -->
+        <form action="text_result" id="textform" method="post">
+            <!-- <div class="text_box"> -->
+            <textarea name="text_search" placeholder="Enter text to search for..." style="height:200px"></textarea>
+            <!-- </div> -->
+            <!-- <div class="button"> -->
+            <input type="submit" value="Search">
+            <!-- </div> -->
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer></footer> 
+
+</body> 
+</html>    
