@@ -11,7 +11,7 @@ roughly about 150MB in size and has over 50k reviews with both a test set and tr
 The text search feature code I wrote will implement different calculations such as:
 
 * **TF(Term Frequency)**
-* **IDF(Inverse Document Frequency)
+* **IDF(Inverse Document Frequency)**
 * **TFIDF**
 * **Cosine Similarity**
 
