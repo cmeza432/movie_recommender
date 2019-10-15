@@ -174,7 +174,9 @@ def controller(text):
         names = f.readlines()
     # Get the txt files from all the reviews available
     data_temp = glob.glob(("Data/test/neg/" + "*.txt"))
+    data_temp = sorted(data_temp, key=lambda name: int(name[14:-6]))
     pos_temp = glob.glob("Data/test/pos/" + "*.txt")
+    pos_temp = sorted(data_temp, key=lambda name: int(name[14:-6]))
     total = make_appended_list(data_temp, pos_temp)
     # Remove all the whitespaces for the names
     names = [x.strip() for x in names]
@@ -232,3 +234,6 @@ def text_result():
     # Call the controller function
     results, cosines, tables, names, stars, words = controller(text)
     return render_template('result.html', words=words, r_c_t_n_s=zip(results, cosines, tables, names, stars))
+
+if __name__ == "__main__":
+    app.run()
