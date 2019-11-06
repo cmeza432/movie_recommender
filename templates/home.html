@@ -46,27 +46,27 @@
             background-color: #000080;
             color: white;
         }
-        .classifier_button {
+        .class_button {
             padding: 16px 24px;
             text-align: center;
+            display: block;
             margin-left: auto;
             margin-right:auto;
-            margin-top: 100px;
-            display: block;
+            margin-top: 80px;
             -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
         }
-        .classifier_button:hover {
+        .class_button:hover {
             background-color: #000080;
             color: white;
         }
         .image_button {
             padding: 16px 24px;
             text-align: center;
+            display: block;
             margin-left: auto;
             margin-right:auto;
-            margin-top: 100px;
-            display: block;
+            margin-top: 80px;
             -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
         }
@@ -100,7 +100,9 @@
     <button id="textButton" class="text_button" type="submit" onclick="textSearch()">Text Search</button>
     </form>
 
-    <button class="classifier_button" type="button">Classifier Search</button>
+    <form action="classifier" method="post">
+    <button id="classButton" class="class_button" type="submit" onclick="classifier()">Classifier</button>
+    </form>
 
     <button class="image_button" type="button">Image Captioning</button>
 
