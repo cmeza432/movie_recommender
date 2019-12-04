@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request
 from text_search import controller
+from classifier import classifier_controller
 import numpy as np
 import re, glob, heapq, sys
 
@@ -42,7 +43,14 @@ def classifier():
 @app.route('/classifier_result', methods=['POST'])
 def classifier_result():
     text = request.form.get("classifier")
-    return render_template("classifier_result.html")
+    text = np.char.lower(text)
+    text = np.char.replace(text, "'", "")
+    text = str(text)
+    # Subsitute all single characters into no space
+    text = re.sub(r'\b\w{1,1}\b', '', text)
+    wordList = re.sub("[^\w]", " ",  text).split()
+    genre = classifier_controller(wordList)
+    return render_template("classifier_result.html", genre=genre)
 
 if __name__ == "__main__":
     app.run()

@@ -59,28 +59,15 @@
             color: #000080;
             font-size: 30px;
         }
+        .genre{
+            color: black;
+            font-size: 26px;
+        }
         .cosine {
             text-align: left;
             font-weight: bold;
             color: #000080;
             margin-top: 0px;
-        }
-        .review {
-            font-size: 18px;
-            color: black;
-            margin-right: 200px
-        }
-        .star {
-            color: #000080;
-            text-align: left;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-        .highlight {
-            background-color: yellow;
-        }
-        table, th, td {
-            border: 1px solid black
         }
     </style> 
 </head>     
@@ -98,6 +85,12 @@
     </div> 
       
     <!-- Body section -->
+    <article class="result content-section">
+        <div class="title">
+            <h2> <a class="name"> Movie Predicted:</a> </h2>
+            <p id="genre" class="genre" align="center"> {{ genre }}</p>
+        </div>
+    </article>
 
     <script>
         
