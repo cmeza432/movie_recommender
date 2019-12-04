@@ -1,7 +1,9 @@
-import glob, os, nltk, re, heapq, tarfile
+import glob, os, nltk, re, heapq, tarfile, sys
 import numpy as np
 from nltk.corpus import stopwords
 from string import punctuation
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 stopword = stopwords.words('english')
 
