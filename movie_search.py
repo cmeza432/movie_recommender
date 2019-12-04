@@ -31,6 +31,7 @@ def text_result():
     text = re.sub(r'\b\w{1,1}\b', '', text)
     # Call the controller function
     results, cosines, names, tfidf, stars, words = controller(text)
+    results = results.encode('utf-8')
     return render_template('text_result.html', w_t=zip(words, tfidf), r_c_n_s=zip(results, cosines, names, stars))
 
 # Routes to the classifier html page
