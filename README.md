@@ -36,3 +36,25 @@ So by doing the calculation of user_TFIDF on each TFIDF vector for the amount of
 ![Cosine](https://wikimedia.org/api/rest_v1/media/math/render/svg/1d94e5903f7936d3c131e040ef2c51b473dd071d)
 
 Once all similarity values are calculated, then I get the 20 highest values and their indexes. I use the indexes to help me return the value of the Names, Rating, TFIDF value for the document, Similarity of that document, and the Review.
+
+
+## Classifier
+
+Second Feature will be a classifier feature. This classifier feature will use the user reviews about
+movies and try to classify the genre based on the word used to describe the movies. I will be using the Naive 
+Bayes Classifier algorithm for calculations.
+
+First I used the unique word TF file that I created for the Text Search. Once I read that file in, I had to seperate each movie into their respective genres and the summed up word count of each genre for that word. So if I had 30 western movie reviews and they each had the word "cowboys", then my column would represent that genre and the rows are the unique words. So if you would look at the western column, then traverse down the list of words and check the cowboys row, the value would be 30. Once I had this matrix, it would be a N x M matrix:
+
+* **N = the amount of unique words**
+* **M = the amount of different genres**
+
+The next step would be to apply the Naive Bayes algorithm to help and build an array of values using the user inputted text. When given text by the user, I would run the algorithm with the words given for each genre so the equation is:
+
+![Naive Bayes](https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-e85875a7ff9e9b557eab6281cc7ff078_l3.svg)
+
+Which using the equation for each word would then turn into:
+
+![Simple Naive Bayes](https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-8171c1fe2cbd3ed62bc3f40d682c0512_l3.svg)
+
+By calculating the value of the words inputted and each genre would give me an array of values of length = (# of genres). Then I would simply just return the highest value of this array and that index would be the genre that it would classify it with.
