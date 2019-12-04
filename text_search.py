@@ -91,7 +91,7 @@ def get_reviews(index, original, similar, name, total):
     stars = []
     for x in range(len(index)):
         location = index[x]
-        reviews.append(original[location])
+        reviews.append(str(original[location]))
         cosine.append(round(similar[location], 6))
         names.append(name[location])
         stars.append(float(total[location][-5]))
