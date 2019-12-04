@@ -1,5 +1,4 @@
 # **Movie Recommender**
-![App](http://cmeza432.pythonanywhere.com/)
 
 This movie recommender app uses practices from the **Data Mining** Field to use different methods for information retrieval.
 The webapp will use a Text Search, Classifier and Image Captioning to return results based on user input. It will run using
