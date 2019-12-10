@@ -1,5 +1,8 @@
 # **Movie Recommender**
 
+### Deployment
+Make sure to have Python Flask installed, if not already installed simply run pip install flask. Once installed, then install the MS-COCO data set here: http://cocodataset.org/#download. MS-COCO is only used for the image caption feature.
+
 This movie recommender app uses practices from the **Data Mining** Field to use different methods for information retrieval.
 The webapp will use a Text Search, Classifier and Image Captioning to return results based on user input. It will run using
 Python Flask version 1.1.1. This will be done in three different iteration. First Iteration will be the text search feature.
@@ -58,3 +61,15 @@ Which using the equation for each word would then turn into:
 ![Simple Naive Bayes](https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-8171c1fe2cbd3ed62bc3f40d682c0512_l3.svg)
 
 By calculating the value of the words inputted and each genre would give me an array of values of length = (# of genres). Then I would simply just return the highest value of this array and that index would be the genre that it would classify it with.
+
+
+## Image Caption
+The Image Captioning feature will prompt the user for an image to process, then will generate a caption to search for depending on the image given. No posters will be used but only screenshots for better accuracy. The MS-COCO dataset will be used for this feature and the IMDB reviews for the search once caption is generated.
+
+Once MS-COCO is downloaded and you have python flask installed (If not then follow instruction at the top of the page) we will preprocess the images using inceptionV3. This is done by reducing the image then normalizing the image so they all have values between -1 and 1. Next will be creating a tf model that will be a 8 x 8 x 2048 sized matrix. This will then be cashed along with the preprocess step of the inceptionV3.
+
+Next step will be to do preprocess and tokenizing all the captions. First we will get all unique words, then limit the words to the top 5k words to limit the size of memory. Once that is done then we create a word to index, and index to word mappings.
+
+We will then create a training dataset that will be cashed, this will be done by getting the TF of the unique words. Once this is done we will squash the shape of the InceptionV3 model from 8x8x2048 to 64x2048. Then it will pass through a CNN encoder and then the RNN will predict the next word. For the training, we will extract stored files and then pass those through these ecoders. The decoder will then return prediction which will then calculate the loss. The last step is to calculate gradients and use backpropagation on the optimizer.
+
+Once the training is done, we can now use images and apply the training to best predict the caption.
